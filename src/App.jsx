@@ -1,9 +1,10 @@
 import { useState, createContext } from 'react'
 import './App.css'
+import { products } from './products';
 
 // Initial state to be used in App
 const initialState = {
-  products: [],
+  products,
   filteredProducts: [],
   cartItems: [],
   searchTerm: "",
