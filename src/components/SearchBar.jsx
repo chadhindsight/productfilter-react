@@ -20,8 +20,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   width: '100%',
   '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 4), // p-2 pl-10
-    borderRadius: '9999px', // rounded-full
+    padding: theme.spacing(1, 1, 1, 4), 
+    borderRadius: theme.shape.borderRadius * 20, 
     transition: theme.transitions.create('width'),
     width: '100%',
   },
