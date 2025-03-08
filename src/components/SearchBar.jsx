@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import { useAppContext } from '../context/globalState';
 // import { useAppContext } from "../context/GlobalState";
 
 export function SearchBar() {
     // needed: 1. onInput change
-    const [text, setText] = useState('');
+    const { state, dispatch } = useAppContext();
 
-    
     const onInputChange = (e) => {
-        setText(e.target.value)
-    }
-    
+      dispatch({ type: "SET_SEARCH_TERM", payload: e.target.value });
+    };
+    console.log(state.searchTerm);
     return (
         <div className="relative w-full">
         <input
@@ -17,7 +17,7 @@ export function SearchBar() {
           id="search"
           className="bg-gray-700 rounded-full p-2 pl-10 transition focus:w-full"
           placeholder="Search products..."
-          value={text}
+          value={state.searchTerm}
           onChange={onInputChange}
         />
         <svg
