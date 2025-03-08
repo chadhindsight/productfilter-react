@@ -6,6 +6,7 @@ function App({ children}) {
 
   return (
     <>
+
       <SearchBar />
     </>
   );
