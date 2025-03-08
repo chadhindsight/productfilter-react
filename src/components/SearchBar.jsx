@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useAppContext } from '../context/globalState';
-// import { useAppContext } from "../context/GlobalState";
 
 export function SearchBar() {
-    // needed: 1. onInput change
     const { state, dispatch } = useAppContext();
 
     const onInputChange = (e) => {
+      // listens for changes and dispatches an action to update searchTerm in the global state
       dispatch({ type: "SET_SEARCH_TERM", payload: e.target.value });
     };
+
     console.log(state.searchTerm);
     return (
         <div className="relative w-full">
