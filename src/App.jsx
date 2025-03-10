@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import './App.css'
-import { SearchBar } from './components/SearchBar';
+import { NavBar } from './components/NavBar';
+
 
 function App({ children}) {
 
   return (
     <>
-
-      <SearchBar />
+      <NavBar />
     </>
   );
 }
