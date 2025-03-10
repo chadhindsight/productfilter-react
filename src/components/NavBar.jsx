@@ -12,7 +12,6 @@ export function NavBar() {
   return (
     <AppBar position="static" color="default" sx={{ bgcolor: 'grey.900' }}>
       <Toolbar>
-        {/* Search Bar component */}
         <SearchBar />
         
         {/* Flexible spacer that pushes the cart icon to the right */}
