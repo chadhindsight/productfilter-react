@@ -7,7 +7,12 @@ const initialState = {
   filteredProducts: [],
   cartItems: [],
   searchTerm: "",
-  selectedCategories: [],
+  selectedCategories: {
+    cameras: false,
+    smartphones: false,
+    games: false,
+    televisions: false
+  },
 };
 
 
