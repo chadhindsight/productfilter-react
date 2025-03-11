@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { Grid2, Card, CardMedia, CardContent, Typography } from "@mui/material";
 import { useAppContext } from "../../context/globalState";
+import Product from "./ProductCard";
 
 const ProductList = () => {
   const { state } = useAppContext();
@@ -20,15 +21,7 @@ const ProductList = () => {
     <Grid2 container spacing={3} sx={{ padding: 3 }}>
       {filteredProducts.map((product) => (
         <Grid2 item key={product.name} xs={12} sm={6} md={4} lg={3}>
-          <Card sx={{ backgroundColor: "#1c1e21", color: "#fff" }}>
-            <CardMedia component="img" height="180" image={product.image} alt={product.name} />
-            <CardContent>
-              <Typography variant="h6">{product.name}</Typography>
-              <Typography variant="body1" sx={{ fontWeight: "bold" }}>
-                ${product.price.toFixed(2)}
-              </Typography>
-            </CardContent>
-          </Card>
+          <Product product={product} /> {/* Use the Product component here */}
         </Grid2>
       ))}
     </Grid2>
