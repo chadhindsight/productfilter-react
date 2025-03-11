@@ -4,7 +4,6 @@ import { products } from './products.js';
 // Initial state to be used in App
 const initialState = {
   products,
-  filteredProducts: [],
   cartItems: [],
   searchTerm: "",
   selectedCategories: {
@@ -22,8 +21,14 @@ function appReducer(state, action) {
     case "SET_PRODUCTS":
       return { ...state, products: action.payload };
 
-    case "SET_FILTERED_PRODUCTS":
-      return { ...state, filteredProducts: action.payload };
+    case "TOGGLE_CATEGORY":
+    return { 
+      ...state, 
+      selectedCategories: {
+        ...state.selectedCategories,
+        [action.payload]: !state.selectedCategories[action.payload]
+      }
+    };
 
     case "SET_CART_ITEMS":
       return { ...state, cartItems: action.payload };
