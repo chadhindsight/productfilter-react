@@ -6,5 +6,9 @@ export function SidePanel(){
 
 
     // dispatch: filtering the list being displayed by what option the user clicks
-    
+    return (
+        <>
+        
+        </>
+    )
 }
