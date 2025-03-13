@@ -9,9 +9,12 @@ function App({ children}) {
   return (
     <>
       <NavBar />
-      <main style={{ display: "flex" }}>
+      <main className='main-content'>
         <SidePanel />
-        <ProductList />
+        <section>
+
+        <ProductList className='product-wrapper' />
+        </section>
       </main>
     </>
   );
