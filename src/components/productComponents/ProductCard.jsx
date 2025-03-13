@@ -8,7 +8,7 @@ export const Product = ({ product }) => {
     <Card sx={{ backgroundColor: "#1c1e21", color: "#fff" }}>
       <CardMedia
         component="img"
-        height="180"
+       
         image={product.url}
         alt={product.name}
       />
