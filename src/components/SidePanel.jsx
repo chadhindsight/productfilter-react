@@ -11,7 +11,7 @@ export function SidePanel(){
     console.log("buns")
     
     return (
-        <>
+        <section className="space-y-4 p-2 w-full md:max-w-[10rem]">
             {
                 Object.keys(state.selectedCategories).map((cat, i)=> (
 
@@ -24,6 +24,6 @@ export function SidePanel(){
                     <label htmlFor={cat}>{cat}</label>
                   </div>))
             }
-        </>
+        </section>
     )
 }
