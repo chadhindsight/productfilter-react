@@ -1,4 +1,3 @@
-// import './App.css'
 import { NavBar } from './components/NavBar';
 import ProductList from './components/productComponents/ProductList';
 import { SidePanel } from './components/SidePanel';

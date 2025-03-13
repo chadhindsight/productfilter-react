@@ -8,7 +8,6 @@ export function SidePanel(){
         // dispatch: filters the product list being displayed by what option the user clicks
         dispatch({type: "TOGGLE_CATEGORY", payload: e.target.name}) // TODO: decide what should the payload be
     }
-    console.log("buns")
     
     return (
         <section id="panel">
