@@ -11,7 +11,7 @@ export function SidePanel(){
     console.log("buns")
     
     return (
-        <section className="panel">
+        <section id="panel">
             {
                 Object.keys(state.selectedCategories).map((cat, i)=> (
 
