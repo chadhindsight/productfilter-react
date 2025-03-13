@@ -5,3 +5,20 @@
 .product-wrapper{
   flex: 1
 }
+
+#panel{
+  width: 15.625rem; 
+  height: 15.625rem;
+  padding: 1rem; 
+  border-right: 1px solid #ddd
+}
+
+#panel div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+#panel input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
