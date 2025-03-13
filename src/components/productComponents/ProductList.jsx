@@ -20,8 +20,8 @@ const ProductList = () => {
   return (
     <Grid2 container spacing={3} sx={{ padding: 3 }}>
       {filteredProducts.map((product) => (
-        <Grid2 item key={product.name} xs={12} sm={6} md={4} lg={3}>
-          <Product product={product} /> {/* Use the Product component here */}
+        <Grid2 size={{ xs: 12, sm: 6, md:4, lg:3 }} key={product.name}>
+          <Product product={product} /> 
         </Grid2>
       ))}
     </Grid2>
