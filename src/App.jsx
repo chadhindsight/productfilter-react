@@ -9,7 +9,7 @@ function App({ children}) {
   return (
     <>
       <NavBar />
-      <main>
+      <main style={{ display: "flex" }}>
         <SidePanel />
         <ProductList />
       </main>
