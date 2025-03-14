@@ -5,7 +5,6 @@ import { useAppContext } from "../../context/globalState";
 
 
 export const Product = ({ product }) => {
-    // TODO : Add the "Add to Cart" button(state & dispatch, <button> with onClick)
     const { dispatch } = useAppContext();
 
     const onAddToCart = ()=> {
@@ -24,7 +23,11 @@ export const Product = ({ product }) => {
         <Typography variant="body1" sx={{ fontWeight: "bold" }}>
           ${product.price.toFixed(2)}
         </Typography>
-        <Button onClick={onAddToCart}>Add To Cart</Button>
+        <Button onClick={onAddToCart}
+        variant="contained"
+        sx={{ mt: 2, backgroundColor: "#D3DAE0", "&:hover": { backgroundColor: "#45a049" } }}
+        >Add To Cart
+        </Button>
       </CardContent>
     </Card>
   );
