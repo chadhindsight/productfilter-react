@@ -16,11 +16,11 @@ export function SidePanel(){
 
                     <div key={i}>
                     <input type="checkbox"
-                     name={cat}
+                     name={"cat"}
                      checked={state.selectedCategories[cat]} 
                      onChange={onCategoryClick}
-                     id={cat} />
-                    <label htmlFor={cat}>{cat}</label>
+                     id={"cat"} />
+                    <label htmlFor={cat}>{`${cat.charAt(0).toUpperCase()}`}{cat.slice(1)}</label>
                   </div>))
             }
         </section>
