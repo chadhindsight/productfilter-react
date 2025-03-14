@@ -35,7 +35,6 @@ export function SearchBar() {
     dispatch({ type: "SET_SEARCH_TERM", payload: e.target.value });
   };
 
-  console.log(state.searchTerm);
   
   return (
     <Search>
