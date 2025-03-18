@@ -70,7 +70,10 @@ function appReducer(state, action) {
         const itemExists = state.cartItems.find(
           (item) => item.product.id === action.payload.id
         );
-      
+        
+        // handles cases where product is not in cart
+        if(!itemExists) return state
+
         if (itemExists.quantity > 1) {
           // If the quantity is greater than 1, decrement the quantity
           return {
