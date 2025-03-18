@@ -33,10 +33,13 @@ export const Cart = () =>{
                         <Typography variant="body2" id="price-in-cart">
                           ${(item.product.price * item.quantity).toFixed(2)}
                         </Typography>
-                        <Button variant="outlined" startIcon={<AddShoppingCartIcon />}>
-                            Increase Quantity
+                        <Button  variant="outlined" startIcon={<AddShoppingCartIcon/>} 
+                        style={{marginRight: "1%" }}>
+                             Add More
                         </Button>
-                        <Button onClick={()=> handleRemoveFromCart(item.product)} variant="outlined" startIcon={<DeleteIcon />}>
+                        <Button  onClick={()=> handleRemoveFromCart(item.product)} 
+                        variant="outlined" color="error" 
+                        startIcon={<DeleteIcon />}>
                             Delete
                         </Button> 
                       </ListItem>
