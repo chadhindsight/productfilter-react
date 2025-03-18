@@ -23,19 +23,19 @@ export const Cart = () =>{
             <Divider />
              <List>
                 {
-                    cartItems.map((product, index) =>(
+                    cartItems.map((item, index) =>(
                         <ListItem key={index} divider>
                         <ListItemText
-                          primary={product.name}
-                          secondary={`Quantity: ${product.quantity}`}
+                          primary={item.product.name}
+                          secondary={`Quantity: ${item.quantity}`}
                         />
                         {/* <Typography variant="body2">
-                          ${(product.price * product.quantity).toFixed(2)}
+                          ${(item.product.price * item.product.quantity).toFixed(2)}
                         </Typography> */}
                         <Button variant="outlined" startIcon={<AddShoppingCartIcon />}>
                             Increase Quantity
                         </Button>
-                        <Button variant="outlined" startIcon={<DeleteIcon />}>
+                        <Button onClick={handleRemoveFromCart} variant="outlined" startIcon={<DeleteIcon />}>
                             Delete
                         </Button> 
                       </ListItem>
@@ -45,10 +45,3 @@ export const Cart = () =>{
         </Paper>
     )
 }
-
-{/* <Button variant="outlined" startIcon={<AddShoppingCartIcon />}>
-                Increase Quantity
-            </Button>
-            <Button variant="outlined" startIcon={<DeleteIcon />}>
-                Delete
-            </Button> */}
