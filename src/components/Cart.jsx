@@ -30,9 +30,9 @@ export const Cart = () =>{
                           primary={item.product.name}
                           secondary={`Quantity: ${item.quantity}`}
                         />
-                        {/* <Typography variant="body2">
-                          ${(item.product.price * item.product.quantity).toFixed(2)}
-                        </Typography> */}
+                        <Typography variant="body2" id="price-in-cart">
+                          ${(item.product.price * item.quantity).toFixed(2)}
+                        </Typography>
                         <Button variant="outlined" startIcon={<AddShoppingCartIcon />}>
                             Increase Quantity
                         </Button>
