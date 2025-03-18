@@ -16,7 +16,6 @@ const ProductList = () => {
       return matchesCategory && matchesSearch;
     });
   }, [products, searchTerm, selectedCategories]);
-  console.log(state.cartItems)
 
   return (
     <Grid2 container spacing={3} sx={{ padding: 3 }}>
