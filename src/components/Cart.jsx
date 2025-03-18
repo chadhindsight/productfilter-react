@@ -12,6 +12,7 @@ export const Cart = () =>{
       };
 
     const handleRemoveFromCart = (product) => {
+      console.log('yo', state.cartItems, product)
         dispatch({ type: "REMOVE_FROM_CART", payload: product });
       };
 
