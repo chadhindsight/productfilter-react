@@ -12,8 +12,8 @@ export const Cart = () =>{
       };
 
     const handleRemoveFromCart = (product) => {
-      console.log('yo', state.cartItems, product)
-        dispatch({ type: "REMOVE_FROM_CART", payload: product });
+      
+        dispatch({ type: "REMOVE_FROM_CART", payload: product});
       };
 
     return(
@@ -36,7 +36,7 @@ export const Cart = () =>{
                         <Button variant="outlined" startIcon={<AddShoppingCartIcon />}>
                             Increase Quantity
                         </Button>
-                        <Button onClick={handleRemoveFromCart} variant="outlined" startIcon={<DeleteIcon />}>
+                        <Button onClick={()=> handleRemoveFromCart(item.product)} variant="outlined" startIcon={<DeleteIcon />}>
                             Delete
                         </Button> 
                       </ListItem>
