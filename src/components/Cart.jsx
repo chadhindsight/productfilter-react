@@ -8,7 +8,7 @@ export const Cart = () =>{
     const { cartItems } = state; 
 
     const handleAddToCart = (product) => {
-        dispatch({ type: "REMOVE_FROM_CART", payload: product });
+        dispatch({ type: "ADD_TO_CART", payload: product });
       };
 
     const handleRemoveFromCart = (product) => {
@@ -34,7 +34,8 @@ export const Cart = () =>{
                           ${(item.product.price * item.quantity).toFixed(2)}
                         </Typography>
                         <Button  variant="outlined" startIcon={<AddShoppingCartIcon/>} 
-                        style={{marginRight: "1%" }}>
+                        style={{marginRight: "1%" }} 
+                        onClick={()=> handleAddToCart(item.product)}>
                              Add More
                         </Button>
                         <Button  onClick={()=> handleRemoveFromCart(item.product)} 
