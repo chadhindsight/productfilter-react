@@ -16,7 +16,7 @@ export function SidePanel(){
 
                     <div key={i}>
                     <input type="checkbox"
-                   
+                     name={cat}
                      checked={state.selectedCategories[cat]} 
                      onChange={onCategoryClick}
                      id={"cat"} />
