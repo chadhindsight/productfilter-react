@@ -1,22 +1,33 @@
 import { Cart } from './components/Cart';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from './components/NavBar';
 import ProductList from './components/productComponents/ProductList';
 import { SidePanel } from './components/SidePanel';
 
 
-function App({ children}) {
+function App() {
 
   return (
     <>
-      <NavBar />
-      <main className='main-content'>
-        <SidePanel />
-        <section>
+    <BrowserRouter>
 
+      <NavBar />
+        <Routes>
+        <Route
+        path="/"
+        element={
+          <main className='main-content'>
+          <SidePanel />
         <ProductList className='product-wrapper' />
-        <Cart />
-        </section>
-      </main>
+        </main>
+        }
+        >
+          
+        </Route>
+        <Route path="/cart" element={<Cart />} />
+        </Routes>
+       
+      </BrowserRouter>
     </>
   );
 }
