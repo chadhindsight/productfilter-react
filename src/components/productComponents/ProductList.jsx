@@ -6,7 +6,6 @@ import Product from "./ProductCard";
 const ProductList = () => {
   const { state } = useAppContext();
   const { products, searchTerm, selectedCategories } = state;
-
   const filteredProducts = useMemo(() => {
     const anyCategorySelected = Object.values(selectedCategories).some(Boolean);
 
