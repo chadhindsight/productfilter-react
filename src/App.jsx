@@ -10,7 +10,6 @@ function App() {
   return (
     <>
     <BrowserRouter>
-
       <NavBar />
         <Routes>
         <Route
@@ -25,8 +24,7 @@ function App() {
           
         </Route>
         <Route path="/cart" element={<Cart />} />
-        </Routes>
-       
+        </Routes>  
       </BrowserRouter>
     </>
   );
