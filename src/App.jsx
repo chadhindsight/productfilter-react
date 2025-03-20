@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from './components/NavBar';
 import ProductList from './components/productComponents/ProductList';
 import { SidePanel } from './components/SidePanel';
+import { Footer } from './components/Footer';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         </Route>
         <Route path="/cart" element={<Cart />} />
         </Routes>  
+      <Footer/>
       </BrowserRouter>
     </>
   );
