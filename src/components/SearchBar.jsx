@@ -47,6 +47,7 @@ export function SearchBar() {
             <SearchIcon />
           </InputAdornment>
         }
+        inputProps={{ "aria-label": "Search products" }}
       />
     </Search>
   );
