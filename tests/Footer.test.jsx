@@ -10,7 +10,7 @@ describe("Footer Component and related content", ()=>{
         render(
             <Footer />
         )
-        // Check if year is correct. NB: Typography component is a paragraph nehind the scenes
+        // Check if year is correct. NB: Use getByText instead of Role because not all browsers expose <p> with a role in accessibility trees
         expect(screen.getByText(`© ${currentYear} chadhindsight. All rights reserved.`)).toBeInTheDocument();
     })
 
