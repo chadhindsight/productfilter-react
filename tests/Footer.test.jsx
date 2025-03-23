@@ -6,7 +6,7 @@ import { render, screen } from "@testing-library/react";
 describe("Footer Component and related content", ()=>{
      const currentYear = new Date().getFullYear();
     
-     it("renders the NavBar component", () => {
+     it("renders the Footer component", () => {
         render(
             <Footer />
         )
