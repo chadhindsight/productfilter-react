@@ -21,9 +21,9 @@ export function NavBar() {
         {/* Flexible spacer that pushes the cart icon to the right */}
         <Box sx={{ flexGrow: 1 }} />
         
-        <IconButton color="inherit" component={Link} to="/cart" data-testid="cart-icon" >
+        <IconButton color="inherit" component={Link} to="/cart">
             {/* will display the number of items in the cart */}
-          <Badge badgeContent={state.cartItems.length} color="error" data-testid="cart-badge">
+          <Badge badgeContent={state.cartItems.length} color="error">
             <ShoppingCartIcon />
           </Badge>
         </IconButton>

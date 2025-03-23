@@ -17,7 +17,7 @@ describe("NavBar Component", () => {
     expect(screen.getByRole("banner")).toBeInTheDocument();
   });
 
-  it("renders the back button", () => {
+  it("renders the back button in the Navbar", () => {
     render(
       <BrowserRouter>
         <AppProvider>
