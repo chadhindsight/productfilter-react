@@ -3,7 +3,7 @@ import { useAppContext } from "../../context/globalState";
 
 
 
-export const Product = ({ product }) => {
+export const ProductCard = ({ product }) => {
     const { dispatch } = useAppContext();
 
     const onAddToCart = ()=> {
@@ -32,4 +32,4 @@ export const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default ProductCard;
