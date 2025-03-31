@@ -12,5 +12,28 @@ describe("Search Bar Component", ()=>{
     )
     expect(screen.getByTestId('searchTing')).toBeInTheDocument();
     })
+
+    it('contains a search input field', () => {
+        render(
+          <AppProvider>
+            <SearchBar />
+          </AppProvider>
+        );
+        
+        // You can also find the input by its role and placeholder text
+        const inputElement = screen.getByPlaceholderText('Search products...');
+        expect(inputElement).toBeInTheDocument();
+      });
+
+      it('shows the search icon', () => {
+        render(
+          <AppProvider>
+            <SearchBar />
+          </AppProvider>
+        );
+        
+        const searchIcon = screen.getByLabelText('Search products');
+        expect(searchIcon).toBeInTheDocument();
+      });  
 })
 
