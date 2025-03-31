@@ -36,7 +36,7 @@ export function SearchBar() {
 
   
   return (
-    <Search>
+    <Search data-testid="searchTing">
       <StyledInputBase
         id="search"
         placeholder="Search products..."
