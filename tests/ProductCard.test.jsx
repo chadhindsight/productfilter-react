@@ -43,7 +43,7 @@ describe("Product Card Component", ()=>{
         const mockDispatch = vi.fn();
         useAppContext.mockReturnValue({ dispatch: mockDispatch }); // ✅ Mock BEFORE rendering
     
-        console.log("Mocked useAppContext:", useAppContext()); // 🔍 Debug
+        console.log("Mocked useAppContext:", useAppContext()); 
     
         render(
           <BrowserRouter>
