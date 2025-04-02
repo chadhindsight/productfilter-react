@@ -54,7 +54,7 @@ describe("ProductList Component", () => {
     });
   });
 
-  it("filters products by search term", () => {
+  it("filters products based on search term", () => {
     mockedUseAppContext.mockReturnValue({
       state: {
         products: mockProducts,
@@ -84,5 +84,4 @@ describe("ProductList Component", () => {
     });
   });
 
-  // Additional tests...
 });
