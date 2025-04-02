@@ -8,11 +8,11 @@ vi.mock("../src/context/globalState", () => ({
   
 
 import { describe, expect, it } from "vitest";
-import ProductCard from "../src/components/productComponents/ProductCard";
-import { useAppContext } from "../src/context/globalState";
+import ProductCard from "../components/productComponents/ProductCard";
+import { useAppContext } from "../context/globalState";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { AppProvider } from "../src/context/globalState";
+import { AppProvider } from "../context/globalState";
 
 
 const testProduct = {

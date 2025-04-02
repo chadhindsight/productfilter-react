@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import {NavBar} from "../src/components/NavBar";
+import {NavBar} from ".";
 import { BrowserRouter } from "react-router-dom";
-import { AppProvider } from "../src/context/globalState";
+import { AppProvider } from "../context/globalState";
 
 describe("NavBar Component", () => {
   it("renders the NavBar component", () => {
