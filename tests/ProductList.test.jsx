@@ -23,7 +23,7 @@ describe("ProductList Component", () => {
   const mockProducts = [...products];
 
   beforeEach(() => {
-    // 4. Reset mock before each test.
+    // 4. Reset mock before each test
     mockedUseAppContext.mockClear();
   });
 
