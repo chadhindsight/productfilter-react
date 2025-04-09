@@ -5,7 +5,7 @@ import { useAppContext } from "../../context/globalState";
 
 export const ProductCard = ({ product }) => {
     const { dispatch } = useAppContext();
-
+  console.log(product.url, "sdfsdf")
     const onAddToCart = ()=> {
       dispatch({type: "ADD_TO_CART", payload: product})
     }
@@ -14,7 +14,7 @@ export const ProductCard = ({ product }) => {
       <CardMedia
         component="img"
        
-        image={product.url}
+        image={`http://127.0.0.1:5000/${product.url}`}
         alt={product.name}
       />
       <CardContent>
