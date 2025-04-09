@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useReducer } from 'react'
-// import { products } from './products.js';
 
 // Initial state to be used in App
 const initialState = {
@@ -39,7 +38,6 @@ function appReducer(state, action) {
     case "SET_SELECTED_CATEGORIES":
       return { ...state, selectedCategories: action.payload };
 
-    // add items to cart
     case "ADD_TO_CART":
       const existingCartItem = state.cartItems.find(
         (item) => item.product.id === action.payload.id
@@ -112,24 +110,13 @@ export const useAppContext = () =>{
   return establishedContext
 }
 
-// export const AppProvider = ({ children }) => {
-//   // Initialize the reducer with the initial state
-//   const [state, dispatch] = useReducer(appReducer, initialState);
-
-//   // Provide the state and dispatch function to the context
-//   return (
-//     <AppContext.Provider value={{ state, dispatch }}>
-//       {children}
-//     </AppContext.Provider>
-//   );
-// };
 
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
   // Fetch products from the Flask API when the component mounts
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/api/products')
+    fetch('https://productfilter-backend.onrender.com/api/products')
       .then(response => response.json())
       .then(data => {
         console.log('it a tape?')
