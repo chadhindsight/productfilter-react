@@ -5,7 +5,6 @@ import { useAppContext } from "../../context/globalState";
 
 export const ProductCard = ({ product }) => {
     const { dispatch } = useAppContext();
-  console.log(product.url, "sdfsdf")
     const onAddToCart = ()=> {
       dispatch({type: "ADD_TO_CART", payload: product})
     }
