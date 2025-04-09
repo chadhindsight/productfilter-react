@@ -13,7 +13,7 @@ export const ProductCard = ({ product }) => {
       <CardMedia
         component="img"
        
-        image={`http://127.0.0.1:5000/${product.url}`}
+        image={`https://productfilter-backend.onrender.com/${product.url}`}
         alt={product.name}
       />
       <CardContent>
