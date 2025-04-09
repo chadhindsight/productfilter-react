@@ -1,6 +1,8 @@
 # Product Filtering with React
 This React project allows user to filter through a list of electronic products and add them to a shopping cart. The original tutorial project this is based on was done in HTML,CSS, & Javascript and was originally authored by [Brad Travery](https://www.traversymedia.com/blog/product-filtering-ui). This version takes the original DOM implmentation and converts it to a React application. 
 
+The backend portion of this applicationwhich uses Flask can be found in [this repository](https://github.com/chadhindsight/productfilter-backend).
+
 ## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
