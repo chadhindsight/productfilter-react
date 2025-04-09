@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useReducer } from 'react'
-import { products } from './products.js';
+// import { products } from './products.js';
 
 // Initial state to be used in App
 const initialState = {
-  products,
+  products: [],
   cartItems: [],
   searchTerm: "",
   selectedCategories: {
@@ -132,11 +132,12 @@ export const AppProvider = ({ children }) => {
     fetch('http://127.0.0.1:5000/api/products')
       .then(response => response.json())
       .then(data => {
+        console.log('it a tape?')
         dispatch({ type: 'SET_PRODUCTS', payload: data });  // Dispatch action to update products in state
       })
       .catch(error => {
         console.error('Error fetching products:', error);
-        // Optionally handle error state if needed
+        
       });
   }, []);
 
