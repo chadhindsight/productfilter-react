@@ -112,11 +112,34 @@ export const useAppContext = () =>{
   return establishedContext
 }
 
+// export const AppProvider = ({ children }) => {
+//   // Initialize the reducer with the initial state
+//   const [state, dispatch] = useReducer(appReducer, initialState);
+
+//   // Provide the state and dispatch function to the context
+//   return (
+//     <AppContext.Provider value={{ state, dispatch }}>
+//       {children}
+//     </AppContext.Provider>
+//   );
+// };
+
 export const AppProvider = ({ children }) => {
-  // Initialize the reducer with the initial state
   const [state, dispatch] = useReducer(appReducer, initialState);
 
-  // Provide the state and dispatch function to the context
+  // Fetch products from the Flask API when the component mounts
+  useEffect(() => {
+    fetch('http://127.0.0.1:5000/api/products')
+      .then(response => response.json())
+      .then(data => {
+        dispatch({ type: 'SET_PRODUCTS', payload: data });  // Dispatch action to update products in state
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+        // Optionally handle error state if needed
+      });
+  }, []);
+
   return (
     <AppContext.Provider value={{ state, dispatch }}>
       {children}
