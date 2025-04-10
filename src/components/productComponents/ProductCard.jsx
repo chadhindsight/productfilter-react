@@ -5,7 +5,6 @@ import { useAppContext } from "../../context/globalState";
 
 export const ProductCard = ({ product }) => {
     const { dispatch } = useAppContext();
-
     const onAddToCart = ()=> {
       dispatch({type: "ADD_TO_CART", payload: product})
     }
@@ -14,7 +13,7 @@ export const ProductCard = ({ product }) => {
       <CardMedia
         component="img"
        
-        image={product.url}
+        image={`https://chadhindsight.pythonanywhere.com/${product.url}`}
         alt={product.name}
       />
       <CardContent>

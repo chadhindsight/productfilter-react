@@ -1,9 +1,8 @@
-import { createContext, useContext, useReducer } from 'react'
-import { products } from './products.js';
+import { createContext, useContext, useEffect, useReducer } from 'react'
 
 // Initial state to be used in App
 const initialState = {
-  products,
+  products: [],
   cartItems: [],
   searchTerm: "",
   selectedCategories: {
@@ -39,7 +38,6 @@ function appReducer(state, action) {
     case "SET_SELECTED_CATEGORIES":
       return { ...state, selectedCategories: action.payload };
 
-    // add items to cart
     case "ADD_TO_CART":
       const existingCartItem = state.cartItems.find(
         (item) => item.product.id === action.payload.id
@@ -112,11 +110,24 @@ export const useAppContext = () =>{
   return establishedContext
 }
 
+
 export const AppProvider = ({ children }) => {
-  // Initialize the reducer with the initial state
   const [state, dispatch] = useReducer(appReducer, initialState);
 
-  // Provide the state and dispatch function to the context
+  // Fetch products from the Flask API when the component mounts
+  useEffect(() => {
+    fetch('https://chadhindsight.pythonanywhere.com/api/products')
+      .then(response => response.json())
+      .then(data => {
+        console.log('it a tape?')
+        dispatch({ type: 'SET_PRODUCTS', payload: data });  // Dispatch action to update products in state
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+        
+      });
+  }, []);
+
   return (
     <AppContext.Provider value={{ state, dispatch }}>
       {children}
