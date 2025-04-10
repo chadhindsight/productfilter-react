@@ -13,7 +13,7 @@ export const ProductCard = ({ product }) => {
       <CardMedia
         component="img"
        
-        image={`https://productfilter-backend.onrender.com/${product.url}`}
+        image={`https://chadhindsight.pythonanywhere.com/${product.url}`}
         alt={product.name}
       />
       <CardContent>

@@ -116,7 +116,7 @@ export const AppProvider = ({ children }) => {
 
   // Fetch products from the Flask API when the component mounts
   useEffect(() => {
-    fetch('https://productfilter-backend.onrender.com/api/products')
+    fetch('https://chadhindsight.pythonanywhere.com/api/products')
       .then(response => response.json())
       .then(data => {
         console.log('it a tape?')
