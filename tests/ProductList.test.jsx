@@ -33,6 +33,7 @@ describe("ProductList Component", () => {
       state: {
         products: mockProducts,
         searchTerm: "",
+        isLoading: false,
         selectedCategories: {
           cameras: false,
           smartphones: false,
@@ -59,6 +60,7 @@ describe("ProductList Component", () => {
       state: {
         products: mockProducts,
         searchTerm: "playstation",
+        isLoading: false,
         selectedCategories: {
           cameras: false,
           smartphones: false,
