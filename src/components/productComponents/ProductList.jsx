@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Grid2, Card, CardMedia, CardContent, Typography } from "@mui/material";
+import { Grid2 } from "@mui/material";
 import { useAppContext } from "../../context/globalState";
 import Product from "./ProductCard";
 
