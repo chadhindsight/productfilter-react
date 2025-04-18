@@ -92,9 +92,10 @@ function appReducer(state, action) {
             ),
           };
         }
-
-    default:
-    return state;  
+        case "SET_LOADING":
+          return {...state, isLoading: action.payload}  
+      default:
+      return state;  
   }
 }
 
@@ -122,6 +123,7 @@ export const AppProvider = ({ children }) => {
       .then(data => {
         console.log('it a tape?')
         dispatch({ type: 'SET_PRODUCTS', payload: data });  // Dispatch action to update products in state
+        dispatch({ type: 'SET_LOADING', payload: false });
       })
       .catch(error => {
         console.error('Error fetching products:', error);
