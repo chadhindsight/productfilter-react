@@ -5,6 +5,7 @@ const initialState = {
   products: [],
   cartItems: [],
   searchTerm: "",
+  isLoading: true,
   selectedCategories: {
     cameras: false,
     smartphones: false,
