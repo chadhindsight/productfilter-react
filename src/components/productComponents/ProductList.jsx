@@ -2,10 +2,11 @@ import React, { useMemo } from "react";
 import { Grid2 } from "@mui/material";
 import { useAppContext } from "../../context/globalState";
 import Product from "./ProductCard";
+import LoadingSpinner from "../LoadingSpinner";
 
 const ProductList = () => {
   const { state } = useAppContext();
-  const { products, searchTerm, selectedCategories } = state;
+  const { products, searchTerm, isLoading, selectedCategories } = state;
   const filteredProducts = useMemo(() => {
     const anyCategorySelected = Object.values(selectedCategories).some(Boolean);
 
@@ -15,6 +16,10 @@ const ProductList = () => {
       return matchesCategory && matchesSearch;
     });
   }, [products, searchTerm, selectedCategories]);
+    
+  if(isLoading){
+    return <LoadingSpinner />
+  }
 
   return (
     <Grid2 container spacing={3} sx={{ padding: 3 }}>
