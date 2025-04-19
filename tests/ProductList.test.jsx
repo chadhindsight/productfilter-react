@@ -5,25 +5,30 @@ import ProductList from "../src/components/productComponents/ProductList";
 import { BrowserRouter } from "react-router-dom";
 import { products } from "../src/context/products";
 
-// 1. Mock the module first
+// Mock the module first
 vi.mock("../src/context/globalState", () => ({
   useAppContext: vi.fn(),
   AppProvider: ({ children }) => <div>{children}</div>
 }));
 
-// 2. Get reference to the mocked function
-const mockedUseAppContext = vi.mocked(useAppContext);
-
-// 3. Mock ProductCard
+// Mock ProductCard
 vi.mock("../src/components/productComponents/ProductCard", () => ({
   default: ({ product }) => <div>{product.name}</div>
 }));
+
+// Mock LoadingSpinner
+vi.mock("../src/components/LoadingSpinner", () => ({
+  default: () => <div>Loading...</div>
+}));
+
+// Get reference to the mocked function
+const mockedUseAppContext = vi.mocked(useAppContext);
 
 describe("ProductList Component", () => {
   const mockProducts = [...products];
 
   beforeEach(() => {
-    // 4. Reset mock before each test
+    // Reset mock before each test
     mockedUseAppContext.mockClear();
   });
 
@@ -33,13 +38,13 @@ describe("ProductList Component", () => {
       state: {
         products: mockProducts,
         searchTerm: "",
-        isLoading: false,
         selectedCategories: {
           cameras: false,
           smartphones: false,
           games: false,
           televisions: false
-        }
+        },
+        isLoading: false // Loading is complete
       },
       dispatch: vi.fn()
     });
@@ -60,13 +65,13 @@ describe("ProductList Component", () => {
       state: {
         products: mockProducts,
         searchTerm: "playstation",
-        isLoading: false,
         selectedCategories: {
           cameras: false,
           smartphones: false,
           games: false,
           televisions: false
-        }
+        },
+        isLoading: false // Loading is complete
       },
       dispatch: vi.fn()
     });
@@ -86,4 +91,55 @@ describe("ProductList Component", () => {
     });
   });
 
+  it("shows loading spinner when isLoading is true", () => {
+    mockedUseAppContext.mockReturnValue({
+      state: {
+        products: [],
+        searchTerm: "",
+        selectedCategories: {
+          cameras: false,
+          smartphones: false,
+          games: false,
+          televisions: false
+        },
+        isLoading: true // Loading in progress
+      },
+      dispatch: vi.fn()
+    });
+
+    render(
+      <BrowserRouter>
+        <ProductList />
+      </BrowserRouter>
+    );
+
+    expect(screen.getByText("Loading...")).toBeInTheDocument();
+    expect(screen.queryByText(mockProducts[0].name)).not.toBeInTheDocument();
+  });
+
+  it("hides loading spinner and shows products when isLoading is false", () => {
+    mockedUseAppContext.mockReturnValue({
+      state: {
+        products: mockProducts,
+        searchTerm: "",
+        selectedCategories: {
+          cameras: false,
+          smartphones: false,
+          games: false,
+          televisions: false
+        },
+        isLoading: false // Loading complete
+      },
+      dispatch: vi.fn()
+    });
+
+    render(
+      <BrowserRouter>
+        <ProductList />
+      </BrowserRouter>
+    );
+
+    expect(screen.queryByText("Loading...")).not.toBeInTheDocument();
+    expect(screen.getByText(mockProducts[0].name)).toBeInTheDocument();
+  });
 });
